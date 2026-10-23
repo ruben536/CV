@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rubén Galván Gato · Curriculum Vitae</title>
+  <meta name="description" content="Curriculum Vitae de Rubén Galván Gato, estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) en Tarragona.">
+  <meta property="og:title" content="Rubén Galván Gato · Curriculum Vitae">
+  <meta property="og:description" content="Estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) en colaboración con Inetum.">
+  <meta property="og:image" content="https://ruben536.github.io/CV/foto.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213d'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23fff' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14213d;
+      --on-ink: #eef2fb;
+      --on-ink-muted: #a6b3cf;
+      --accent: #2f6fe4;
+      --accent-soft: #e9f0fd;
+      --text: #1b2333;
+      --muted: #5d6779;
+      --line: #e3e8f1;
+      --paper: #ffffff;
+      --page: #e9edf4;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      padding: 24px 16px 48px;
+      background: var(--page);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    h1, h2, h3, p, ul, ol, dl, dd { margin: 0; padding: 0; }
+    ul, ol { list-style: none; }
+
+    /* Barra de acciones (solo en pantalla) */
+    .toolbar {
+      width: min(210mm, 100%);
+      margin: 0 auto 14px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(20, 33, 61, .18);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* Hoja */
+    .sheet {
+      width: min(210mm, 100%);
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(20, 33, 61, .06), 0 18px 50px rgba(20, 33, 61, .14);
+      display: grid;
+      grid-template-columns: 36% 1fr;
+    }
+
+    .side, .photo-cell, .info { background: var(--ink); color: var(--on-ink); }
+
+    .photo-cell {
+      grid-area: photo;
+      padding: 38px 30px 0;
+    }
+
+    .photo {
+      display: block;
+      width: 150px;
+      height: auto;
+      aspect-ratio: 298 / 382;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 3px solid rgba(255, 255, 255, .14);
+    }
+
+    .info {
+      grid-area: info;
+      padding: 30px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .info h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--on-ink-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .info h2::before {
+      content: "";
+      width: 18px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    .contact { display: grid; gap: 11px; font-size: 13px; }
+    .contact li { display: flex; align-items: flex-start; gap: 10px; overflow-wrap: anywhere; }
+    .contact svg { flex: none; width: 16px; height: 16px; margin-top: 2px; color: #7fa6f0; }
+
+    .skills { display: grid; gap: 13px; }
+    .skills dt {
+      margin-bottom: 6px;
+      color: var(--on-ink-muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .skills dd { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      padding: 3px 10px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .07);
+      font-size: 12.5px;
+      font-weight: 500;
+    }
+
+    .langs { display: grid; gap: 9px; font-size: 13px; }
+    .langs li { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .level {
+      padding: 2px 9px;
+      border-radius: 6px;
+      background: rgba(47, 111, 228, .28);
+      color: #cfe0ff;
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+
+    /* Cabecera y contenido */
+    .head {
+      grid-area: head;
+      padding: 40px 40px 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+
+    .role {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .main {
+      grid-area: main;
+      padding: 0 40px 40px;
+    }
+
+    .block { margin-top: 30px; }
+
+    .block > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .block > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .summary { color: #343d4f; font-size: 14px; }
+
+    .timeline { position: relative; display: grid; gap: 18px; padding-left: 22px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      border-radius: 1px;
+      background: var(--line);
+    }
+    .timeline li { position: relative; }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--accent);
+    }
+    .timeline li.now::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+
+    .item-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 2px 12px;
+    }
+    .item-head h3 { color: var(--ink); font-size: 15px; font-weight: 700; }
+    .when {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .timeline p { margin-top: 3px; color: var(--muted); }
+
+    .tag {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      vertical-align: 2px;
+    }
+
+    /* Móvil: todo en una columna */
+    @media (max-width: 720px) {
+      body { padding: 12px 0 32px; }
+      .toolbar { padding: 0 16px; }
+      .sheet {
+        min-height: 0;
+        border-radius: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "photo" "head" "info" "main";
+      }
+      .side, .content { display: contents; }
+      .photo-cell { padding: 32px 20px 0; display: flex; justify-content: center; }
+      .photo { width: 132px; }
+      .head {
+        padding: 20px 20px 4px;
+        align-items: center;
+        text-align: center;
+        background: var(--ink);
+      }
+      .head h1 { color: #fff; font-size: 28px; }
+      .head .role { color: var(--on-ink-muted); }
+      .head .eyebrow { color: #7fa6f0; }
+      .info { padding: 28px 20px 32px; }
+      .main { padding: 0 20px 32px; }
+    }
+
+    /* Impresión / Guardar como PDF: una hoja A4 */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .toolbar { display: none; }
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        min-height: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .sheet, .photo-cell, .info, .level, .chip, .tag, .timeline li::before {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a:hover { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button class="btn" type="button" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      Descargar PDF
+    </button>
+  </div>
+
+  <main class="sheet">
+    <div class="side">
+      <div class="photo-cell">
+        <img class="photo" src="foto.jpg" alt="Foto de Rubén Galván Gato" width="298" height="382">
+      </div>
+
+      <aside class="info">
+        <section>
+          <h2>Datos personales</h2>
+          <ul class="contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span>Tarragona, España</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+34691905373">+34 691 905 373</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <a href="mailto:ruga536@vidalibarraquer.net">ruga536@vidalibarraquer.net</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              <a href="https://github.com/ruben536">github.com/ruben536</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Competencias</h2>
+          <dl class="skills">
+            <div>
+              <dt>Programación</dt>
+              <dd><span class="chip">Java</span><span class="chip">Cobol</span></dd>
+            </div>
+            <div>
+              <dt>Redes</dt>
+              <dd><span class="chip">LAN</span><span class="chip">DHCP</span><span class="chip">DNS</span></dd>
+            </div>
+            <div>
+              <dt>Sistemas</dt>
+              <dd><span class="chip">Windows</span><span class="chip">Linux</span></dd>
+            </div>
+            <div>
+              <dt>PIM / eCommerce</dt>
+              <dd><span class="chip">Sales Layer</span></dd>
+            </div>
+          </dl>
+        </section>
+
+        <section>
+          <h2>Idiomas</h2>
+          <ul class="langs">
+            <li><span>Español</span><span class="level">Nativo</span></li>
+            <li><span>Catalán</span><span class="level">Nativo</span></li>
+            <li><span>Inglés</span><span class="level">C1</span></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <div class="content">
+      <header class="head">
+        <p class="eyebrow">Curriculum Vitae</p>
+        <h1>Rubén Galván Gato</h1>
+        <p class="role">Estudiante de Desarrollo de Aplicaciones Multiplataforma</p>
+      </header>
+
+      <div class="main">
+        <section class="block">
+          <h2>Perfil</h2>
+          <p class="summary">Estudiante de IT cursando el CFGS de Desarrollo de Aplicaciones Multiplataforma (DAM) en colaboración con Inetum. Experiencia en implantación de eCommerce y gestión de datos de producto. Motivado para crecer en el entorno profesional.</p>
+        </section>
+
+        <section class="block">
+          <h2>Experiencia</h2>
+          <ol class="timeline">
+            <li>
+              <div class="item-head"><h3>Movertis</h3><span class="when">Jun 2026 – Jul 2026</span></div>
+              <p>Estancia de prácticas en el departamento de soporte técnico.</p>
+            </li>
+            <li>
+              <div class="item-head"><h3>AVK Válvulas</h3><span class="when">Jun 2025 – Ago 2025</span></div>
+              <p>Contratado tras prácticas para integrar el catálogo en el sistema PIM.</p>
+            </li>
+            <li>
+              <div class="item-head"><h3>AVK Válvulas</h3><span class="when">Oct 2024 – Feb 2025</span></div>
+              <p>Participación en la implantación del eCommerce y coordinación con Sales Layer.</p>
+            </li>
+            <li>
+              <div class="item-head"><h3>Erasmus+ – LEADER GSM Repairs (Orleans)</h3><span class="when">Jun 2024</span></div>
+              <p>Reparación de dispositivos en entorno técnico real.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="block">
+          <h2>Educación</h2>
+          <ol class="timeline">
+            <li class="now">
+              <div class="item-head"><h3>CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)<span class="tag">En curso</span></h3><span class="when">2025 – Actualidad</span></div>
+              <p>Programa en colaboración con Inetum.</p>
+            </li>
+            <li>
+              <div class="item-head"><h3>CFGM Sistemas Microinformáticos</h3><span class="when">2023 – 2025</span></div>
+              <p>Institut Vidal i Barraquer.</p>
+            </li>
+            <li>
+              <div class="item-head"><h3>ESO</h3><span class="when">2019 – 2023</span></div>
+              <p>Educación Secundaria Obligatoria.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
