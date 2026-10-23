@@ -71,7 +71,7 @@
       box-shadow: 0 4px 14px rgba(20, 33, 61, .18);
       transition: transform .15s ease, background .15s ease;
     }
-    .btn:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn:hover { background: var(--accent); transform: translateY(-1px); text-decoration: none; }
     .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
     .btn svg { width: 16px; height: 16px; }
 
@@ -325,10 +325,10 @@
 </head>
 <body>
   <div class="toolbar">
-    <button class="btn" type="button" onclick="window.print()">
+    <a class="btn" href="CV_Ruben_Galvan.pdf" download="CV_Ruben_Galvan.pdf">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
       Descargar PDF
-    </button>
+    </a>
   </div>
 
   <main class="sheet">
